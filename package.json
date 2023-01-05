@@ -4,7 +4,8 @@
   "description": "Analyse IP-addresses",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "dev": "nodemon"
   },
   "author": "Lenny Claes",
   "license": "ISC",
