@@ -1,0 +1,15 @@
+{
+  "name": "ip-tools",
+  "version": "0.0.1",
+  "description": "Analyse IP-addresses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lenny Claes",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.11.18",
+    "typescript": "^4.9.4"
+  }
+}
