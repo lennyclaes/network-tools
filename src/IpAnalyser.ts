@@ -24,21 +24,25 @@ export default class IpAnalyser {
         return this.netmask.map((segment: number): number => { return segment ^ this.bitmask });
     }
 
+    /**
+     * Gets the IPv4 network address based on the IP address and subnet
+     * @returns The networkaddress of the networksegment
+     */
     getNetworkAddress(): string {
-        let networkAddress: string = "";
-        for (let i = 0; i < this.ipLength; i++) {
-            networkAddress += this.ipAddress[i] & this.netmask[i];
-            if (i < this.ipLength) { networkAddress += '.' };
-        }
-        return networkAddress;
+        let networkAddress: number[] = this.ipAddress.map((segment: number, i: number) => {
+            return segment & this.netmask[i];
+        });
+        return networkAddress.join('.');
     }
 
+    /**
+     * Gets the IPv4 broadcast address based on the IP address and subnet
+     * @returns The broadcastaddress of the networksegment
+     */
     getBroadcastAddress(): string {
-        let broadcastAddress: string = "";
-        for (let i = 0; i < this.ipLength; i++) {
-            broadcastAddress += this.ipAddress[i] | this.wildcard[i];
-            if (i < this.ipLength) { broadcastAddress += '.' };
-        }
-        return broadcastAddress;
+        let broadcastAddress: number[] = this.ipAddress.map((segment: number, i: number) => {
+            return segment | this.wildcard[i];
+        });
+        return broadcastAddress.join('.');
     }
 }
