@@ -1,6 +1,6 @@
 {
   "name": "@lennyclaes/network-tools",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Gets the network and broadcast address for a network",
   "main": "./lib/index.js",
   "type": "module",
