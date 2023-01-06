@@ -45,6 +45,10 @@ export default class CIDR {
      * @returns The subnet mask as a string
      */
     private formSubnet(): string {
+        if (this._signBits > 32) {
+            throw new Error('Significance bits cannot be higher than 32, received: ' + this._signBits);
+        }
+
         let signBits: number = this._signBits;
         const netmask: number[] = [];
 
